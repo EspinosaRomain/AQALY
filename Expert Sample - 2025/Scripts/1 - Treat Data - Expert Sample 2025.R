@@ -32,7 +32,6 @@ df=loadRData("RawData/ExpertSample2025_rawAnonymData.RData")
 #import functions
 source(paste0(dirname(dirname(dirname(rstudioapi::getSourceEditorContext()$path))),"/CommonFunctions/","FunctionsUsedToCreateDesign.R"))
 source(paste0(dirname(dirname(dirname(rstudioapi::getSourceEditorContext()$path))),"/CommonFunctions/","FunctionsForMixedLogitEstimation.R"))
-source(paste0(dirname(dirname(dirname(rstudioapi::getSourceEditorContext()$path))),"/CommonFunctions/","FunctionsForConditionalLogitEstimation.R"))
 source(paste0(dirname(dirname(dirname(rstudioapi::getSourceEditorContext()$path))),"/CommonFunctions/","FunctionsForAQALYscores.R"))
 
 #Looking at missing values
@@ -82,7 +81,7 @@ densityPairs
 df$treatment="ExpertSample"
 
 #Load the retained design
-retainedDesign=loadRData("Design/DesignPilot3.RData")
+retainedDesign=loadRData("Design/Design.RData")
 
 #Prepare dataset for estimation
 listVars=c("Task1Choice","Task2Choice","Task3Choice","Task4Choice","Task5Choice","Task6Choice","Task7Choice","Task8Choice","Task9Choice","Task10Choice")
